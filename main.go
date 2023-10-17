@@ -12,6 +12,7 @@ func main() {
 	http.HandleFunc("/signup", auth.Reg)
 	http.HandleFunc("/signin", auth.Login)
 	http.HandleFunc("/profile", auth.Profile)
+	http.HandleFunc("/refreshtoken", auth.RefreshToken)
 
 	log.Println("http server started on :8080")
 	err := http.ListenAndServe(":8080", nil)
