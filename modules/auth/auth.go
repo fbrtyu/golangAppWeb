@@ -36,7 +36,18 @@ func Reg(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	w.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS")
 	w.Header().Set("Access-Control-Allow-Credentials", "true")
+<<<<<<< Updated upstream
 	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+=======
+<<<<<<< HEAD
+	w.Header().Set("Access-Control-Allow-Origin", "http://127.0.0.1:3000")
+	w.Header().Set("Access-Control-Expose-Headers", "Authorization") //withCredentials: true Set-Cookie
+	c := http.Cookie{Name: "some", Value: "cookie"}
+	http.SetCookie(w, &c)
+=======
+	w.Header().Set("Access-Control-Allow-Origin", "http://localhost:3000")
+>>>>>>> e716e26d7b18f174f98f5fcbc411c9ad52a5b832
+>>>>>>> Stashed changes
 	r.ParseForm()
 
 	hash, _ := HashPassword(r.FormValue("password1"))
